@@ -70,8 +70,10 @@ function npcaccept()
 end
 
 function resurrect()
-	if GetBattlefieldStatus(1) == "active" and not HasSoulstone() then
+	for i = 1, MAX_BATTLEFIELD_QUEUES do
+		if GetBattlefieldStatus(i) == "active" and not HasSoulstone() then
 		RepopMe()
+		end
 	end
 end
 
